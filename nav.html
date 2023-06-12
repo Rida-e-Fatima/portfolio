@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 120px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.social-links.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.social-links li {
+  margin: 10px;
+}
+
+.social-links a img {
+  width: 30px;
+  height: 30px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle" onclick="toggleSocialLinks()">&#43;</div>
+        <ul class="social-links">
+          <li><a href="https://facebook.com"><img src="facebook.png" alt="Facebook"></a></li>
+          <li><a href="https://twitter.com"><img src="twitter.png" alt="Twitter"></a></li>
+          <li><a href="https://instagram.com"><img src="instagram.png" alt="Instagram"></a></li>
+          <li><a href="https://linkedin.com"><img src="linkedin.png" alt="LinkedIn"></a></li>
+        </ul>
+      </div>
+      
+    <script>
+       function toggleSocialLinks() {
+  var socialLinks = document.querySelector('.social-links');
+  socialLinks.classList.toggle('open');
+}
+
+    </script>
+</body>
+</html>
